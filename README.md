@@ -31,4 +31,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] =  "mysql+mysqlconnector://root:root@local
 or create manually in mysql
 ```
 
+## Postman
+
+posmant: <https://documenter.getpostman.com/view/8214376/TzRRE9QN#introduction>
+
 Any question ? please contact me on email
