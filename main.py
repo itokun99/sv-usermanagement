@@ -18,7 +18,6 @@ db = SQLAlchemy(app);
 ma = Marshmallow(app)
 api = Api(app)
 
-# print(dir(ma))
 
 
 # MODEL
@@ -84,7 +83,6 @@ class UserPagination(Resource):
     
 class UserList(Resource):
   def get(self):
-    print('serlina')
     users = User.query.all()
     response = jsonify({
       "status": 1,
@@ -117,8 +115,6 @@ class UserList(Resource):
     # find existing username
     existUser = User.query.filter_by(username=username).first()
     
-    print('oke 123')
-    print(existUser)
     
     if existUser is not None:
       return abort(make_response({
@@ -194,7 +190,6 @@ class UserResource(Resource):
     existUsername = User.query.filter_by(username=username).first();
     
     if existUsername is not None:
-      # print('existUsername.username', existUsername.username == username)
       if existUsername.username == username and username != user.username:
         return abort(make_response({
           "status": 0,
