@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 #CONFIG
 app.config["SECRET_KEY"] = "svtest"
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://root:root@localhost:8889/sv_usermanagement"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://indrawan99:Ai12171234@www.db4free.net:3306/sv_userdb"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 
 db = SQLAlchemy(app);
@@ -84,6 +84,7 @@ class UserPagination(Resource):
     
 class UserList(Resource):
   def get(self):
+    print('serlina')
     users = User.query.all()
     response = jsonify({
       "status": 1,
